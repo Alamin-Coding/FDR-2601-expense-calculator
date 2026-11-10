@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Volkhov:wght@400;700&family=Jost:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@utility container {
+	margin-inline: auto;
+	padding-inline: 1rem;
+}
+@theme {
+	--color-body: #140c1c;
+	--subheading-color: #8750f7;
+
+	--breakpoint-*: initial;
+	--breakpoint-sm: 40rem;
+	--breakpoint-md: 48rem;
+	--breakpoint-lg: 64rem;
+	--breakpoint-xl: 80rem;
+	--breakpoint-2xl: 84rem;
+
+	--color-heading: #484848;
+	--color-paragraph: #8a8a8a;
+	--color-gold: #fca120;
+	--color-red: #ff4646;
+
+	--font-volkhov: "Volkhov", serif;
+	--font-poppins: "Poppins", sans-serif;
+	--font-jost: "Jost", sans-serif;
+
+	--breakpoint-*: initial;
+	--breakpoint-sm: 40rem;
+	--breakpoint-md: 48rem;
+	--breakpoint-lg: 64rem;
+	--breakpoint-xl: 82rem;
+}
+
+html {
+	color-scheme: light;
+	--app-background: #ffffff;
+	--app-foreground: #111827;
+	--app-surface: #ffffff;
+	--app-surface-muted: #f3f4f6;
+	--app-muted: #6b7280;
+}
+
+html.dark {
+	color-scheme: dark;
+	--app-background: #111827;
+	--app-foreground: #f9fafb;
+	--app-surface: #1f2937;
+	--app-surface-muted: #374151;
+	--app-muted: #cbd5e1;
+	--color-heading: #f1f5f9;
+	--color-paragraph: #cbd5e1;
+}
+
+@layer base {
+	a {
+		@apply inline-block;
+	}
+}
+
+@layer utilities {
+	.active {
+		background-color: black;
+		color: white;
+	}
+}
+
+@utility comon_button_black {
+	@apply py-5 px-11.25 text-white bg-black rounded-[10px] font-poppins text-[16px] leading-[100%] shadow-none  transition-all duration-300 cursor-pointer;
+}
+
+body {
+	background-color: var(--app-background);
+	color: var(--app-foreground);
+	font-family: "Noto Sans", sans-serif;
+	transition:
+		background-color 200ms ease,
+		color 200ms ease;
+}
+
+html:not(.dark) body,
+html.dark body {
+	background-color: var(--app-background);
+	color: var(--app-foreground);
+}
+
+html.dark [class~="bg-white"],
+html.dark [class~="bg-gray-50"],
+html.dark [class~="bg-[#F8F8F8]"],
+html.dark [class~="bg-[#FAFAFA]"] {
+	background-color: var(--app-surface);
+}
+
+html.dark [class~="bg-gray-100"],
+html.dark [class~="bg-gray-200"],
+html.dark [class~="bg-gray-300"],
+html.dark [class~="bg-[#f4f4f4]"],
+html.dark [class~="bg-[#f5f5f5]"],
+html.dark [class~="bg-[#e4e4e4]"],
+html.dark [class~="bg-[#E0E0E0]"],
+html.dark [class~="bg-[#DEDEDE]"],
+html.dark [class~="bg-[#d9d9d9]"] {
+	background-color: var(--app-surface-muted);
+}
+
+html.dark [class~="bg-[#484848]"] {
+	background-color: var(--app-muted);
+}
+
+html.dark [class~="text-black"],
+html.dark [class~="text-[#1a1a1a]"],
+html.dark [class~="text-[#222]"],
+html.dark [class~="text-[#333]"],
+html.dark [class~="text-[#444]"],
+html.dark [class~="text-[#484848]"],
+html.dark [class~="text-[#555]"],
+html.dark [class~="text-[#666666]"] {
+	color: var(--app-foreground);
+}
+
+html.dark [class~="text-[#6b6b6b]"],
+html.dark [class~="text-[#7a7a7a]"],
+html.dark [class~="text-[#8A8A8A]"],
+html.dark [class~="text-gray-500"],
+html.dark [class~="text-gray-600"],
+html.dark [class~="text-paragraph"] {
+	color: var(--color-paragraph);
+}
+
+html.dark [class~="text-heading"] {
+	color: var(--color-heading);
+}
+
+html.dark [class~="border-black"],
+html.dark [class~="border-gray-400"],
+html.dark [class~="border-[#d9d9d9]"],
+html.dark [class~="border-[#e5e5e5]"],
+html.dark [class~="border-[#EEEEEE]"] {
+	border-color: #64748b;
+}
+
+html.dark input,
+html.dark select,
+html.dark textarea {
+	color: var(--app-foreground);
+}
+
+html.dark input::placeholder,
+html.dark textarea::placeholder {
+	color: #94a3b8;
+}
+
+/*::first-line{
+background: black;
+color:white;
+border-radius: 10px;
+padding:12px 32px;
+align-items: center;
+cursor: pointer;
+display: flex;
+margin-top:6px
+}*/
